@@ -9,6 +9,9 @@ import {
     NavbarToggler
   
   }from 'reactstrap'
+
+  import { Link } from 'react-router-dom'
+
   
   const Header =()=>{
     const [open,setOpen] = useState(false)
@@ -17,12 +20,12 @@ import {
     }
     return(
       <Navbar color='light' light expand='md'>
-        <NavbarBrand> Minhas Séries</NavbarBrand>
+        <NavbarBrand tag={Link} to='/'> Minhas Séries</NavbarBrand>
         <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={open} navbar>
           <Nav className='ml-auto' navbar>
             <NavItem>
-              <NavLink href='/'>Gêneros</NavLink>
+              <NavLink tag={Link} to='/generos'>Gêneros</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
