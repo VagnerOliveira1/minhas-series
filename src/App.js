@@ -26,8 +26,6 @@ function App() {
             <Route path='/generos/:id'exact component={EditarGenero}/>
             <Route path='/generos' exact component={Generos}/>
          </Switch> 
-
-
       </div>
     </Router> 
   );

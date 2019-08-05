@@ -24,7 +24,7 @@ const EditarGenero = ({match})=>{
     }
     
     const save = () =>{
-       axios.put('/api/genres'+ match.params.id,{
+       axios.put('/api/genres/'+ match.params.id,{
            name
        })
        .then(res=>{
