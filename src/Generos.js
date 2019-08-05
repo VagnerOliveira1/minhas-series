@@ -13,12 +13,25 @@ const Generos = () =>{
         })
 },[])
 
+const deleteGenero = id =>{
+    console.log(id)
+    axios.delete('/api/genres/' + id)
+        .then(res =>{
+            const filtrado = data.filter(item => item.id !== id)
+            setDate(filtrado)
+        })
+
+}
+
 const renderLinha = record => {
     return (
             <tr key={record.id}>
                  <th scope="row">{record.id}</th>
                  <td>{record.name}</td>
-                 <td><button>+</button></td>
+                 <td>
+                     <button className='btn btn-danger' onClick={()=>deleteGenero(record.id)}> Excluir</button>
+                     <Link to={'/generos/' + record.id}>Editar</Link>
+                </td>
             </tr>
     )
     }
@@ -35,6 +48,10 @@ const renderLinha = record => {
             
         )
     }
+
+    const id = 2
+    const filtro = data.filter(item => item.id !== id)
+    console.log(filtro)
 
     return (
         <div className='container'>

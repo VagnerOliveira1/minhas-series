@@ -25,7 +25,7 @@ const NovoGenero = ()=>{
             <h1>Novo Gênero</h1>
             <form>
                 <div className='form-group'>
-                    <label for='name'>Nome</label>
+                    <label htmlFor='name'>Nome</label>
                     <input type='text' value={name} onChange={onChange} className='form-control'id='name' placeholder='Nome do Gênero'></input>
                 </div>
                 <button type='button'onClick={save} className='btn btn-primary'>Salvar</button>
